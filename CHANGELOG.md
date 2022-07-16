@@ -6,6 +6,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.1] - 2022-07-16
+### Added
+- Features.feature_enabled? to valid prefixes to populate the completion menu
+
 ## [0.1.0] - 2022-07-15
 ### Added
 - Initial version of the plugin

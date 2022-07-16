@@ -41,7 +41,13 @@ function M.valid_prefix(prefix)
     return false
   end
 
-  local valid_prefixes = { "feature_enabled?", "with_feature", "without_feature", "featureEnabled" }
+  local valid_prefixes = {
+    "feature_enabled?",
+    "with_feature",
+    "without_feature",
+    "featureEnabled",
+    "Features.feature_enabled?",
+  }
 
   local match = false
 
