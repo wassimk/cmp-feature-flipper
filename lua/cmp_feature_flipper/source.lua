@@ -27,12 +27,9 @@ source.complete = function(_, request, callback)
   then
     local items = {}
     for name, documentation in pairs(flippers.all(filtered_prefix)) do
-
-      -- if trigger_character == ':' then name = (":" .. name) end
-
       local cmp_item = {
-        filterText = name,
-        label = name,
+        filterText = trigger_character .. name,
+        label = trigger_character .. name,
         documentation = documentation,
         textEdit = {
           newText = trigger_character .. name,
