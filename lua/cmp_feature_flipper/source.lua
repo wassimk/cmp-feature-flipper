@@ -19,9 +19,12 @@ source.complete = function(_, request, callback)
   local prefix = string.sub(request.context.cursor_before_line, 1, request.offset - 1)
   local trigger_character = string.sub(input, 1, 1)
 
-  local filtered_prefix = prefix:match('(%g+)%([\"\':]$')
+  local filtered_prefix = prefix:match('(%g+)%(["\':]$')
 
-  if (vim.startswith(input, ':') or vim.startswith(input, "'") or vim.startswith(input, '"')) and flippers.valid_prefix(filtered_prefix) then
+  if
+    (vim.startswith(input, ':') or vim.startswith(input, "'") or vim.startswith(input, '"'))
+    and flippers.valid_prefix(filtered_prefix)
+  then
     local items = {}
     for name, documentation in pairs(flippers.all(filtered_prefix)) do
 
@@ -49,12 +52,12 @@ source.complete = function(_, request, callback)
       table.insert(items, cmp_item)
     end
 
-    callback {
+    callback({
       items = items,
       isIncomplete = true,
-    }
+    })
   else
-    callback { isIncomplete = true }
+    callback({ isIncomplete = true })
   end
 end
 

@@ -21,12 +21,12 @@ if not success then
 end
 
 function M.all(prefix)
-  if prefix == "featureEnabled" then
+  if prefix == 'featureEnabled' then
     local js_flippers = {}
 
     for name, description in pairs(flippers) do
-      local new_name = name:match("_([_a-z]+)")
-      new_name = new_name:gsub("enable_", ""):gsub("disable_", "")
+      local new_name = name:match('_([_a-z]+)')
+      new_name = new_name:gsub('enable_', ''):gsub('disable_', '')
 
       js_flippers[new_name] = description
     end
