@@ -42,12 +42,12 @@ function M.valid_prefix(prefix)
   end
 
   local valid_prefixes = {
+    'Features.enabled?',
+    'Features.feature_enabled?',
+    'featureEnabled',
     'feature_enabled?',
     'with_feature',
     'without_feature',
-    'featureEnabled',
-    'Features.feature_enabled?',
-    'Features.enabled?',
   }
 
   local match = false

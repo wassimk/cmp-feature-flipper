@@ -1,20 +1,20 @@
 local flippers = require('cmp_feature_flipper.flippers')
 
-local source = {}
+local M = {}
 
-source.new = function()
-  return setmetatable({}, { __index = source })
+M.new = function()
+  return setmetatable({}, { __index = M })
 end
 
-source.is_available = function()
+M.is_available = function()
   return vim.fn.filereadable('./config/feature-descriptions.yml') == 1
 end
 
-source.get_trigger_characters = function()
+M.get_trigger_characters = function()
   return { ':', '"', "'" }
 end
 
-source.complete = function(_, request, callback)
+M.complete = function(_, request, callback)
   local input = string.sub(request.context.cursor_before_line, request.offset - 1)
   local prefix = string.sub(request.context.cursor_before_line, 1, request.offset - 1)
   local trigger_character = string.sub(input, 1, 1)
@@ -58,4 +58,4 @@ source.complete = function(_, request, callback)
   end
 end
 
-return source
+return M
