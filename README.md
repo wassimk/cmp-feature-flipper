@@ -1,3 +1,5 @@
+> **Deprecated:** This plugin is no longer maintained. Use [flipper-complete.nvim](https://github.com/wassimk/flipper-complete.nvim) instead, which supports both blink.cmp and nvim-cmp natively.
+
 # cmp-feature-flipper
 
 This plugin is a source for [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) to complete feature flipper names and descriptions when using the Ruby [flipper gem](https://github.com/jnunemaker/flipper).
